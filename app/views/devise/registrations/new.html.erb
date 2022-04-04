@@ -29,7 +29,7 @@
 
         <div class="field">
           <%= f.label :secret_id, "秘密の質問" %><br />
-          <%= f.collection_select(:secret_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <%= f.collection_select(:secret_id, Secret.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         </div>
 
         <div class="field">
