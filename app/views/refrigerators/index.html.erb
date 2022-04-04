@@ -1,0 +1,25 @@
+<%= render "shared/header"%>
+
+<body>
+  <main class="main">
+    <div class="inner">
+    <%# ログインしていないときは以下を表示する %>
+      <div>
+          <h2>あなたの冷蔵庫はきれいですか？</h2>
+          <p>
+            買い物に行ったのに食材を買い忘れた…<br>
+            冷蔵庫を開けたら同じ食材を買っていた…<br>
+            <b>こんなこと起きてませんか？</b>
+          </p>
+          
+      </div> 
+    <%# // ログインしていないときは上記を表示する %>
+      <div class="card__wrapper">
+    <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      </div>
+    </div>
+  </main>
+    
+</body>
+
+<%= render "shared/footer" %>
