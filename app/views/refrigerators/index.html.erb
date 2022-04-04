@@ -3,8 +3,14 @@
 <body>
   <main class="main">
     <div class="inner">
-    <%# ログインしていないときは以下を表示する %>
       <div>
+          <% if user_signed_in? %>
+            <div class="greeting">
+              <h2>こんにちは</h2>
+              <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link %>
+            </div>
+          <% else %>
+<%# ログインしていないときは以下を表示する %>
           <h2>あなたの冷蔵庫はきれいですか？</h2>
           <p>
             買い物に行ったのに食材を買い忘れた…<br>
@@ -12,8 +18,9 @@
             <b>こんなこと起きてませんか？</b>
           </p>
           
+          <% end %>
       </div> 
-    <%# // ログインしていないときは上記を表示する %>
+<%# // ログインしていないときは上記を表示する %>
       <div class="card__wrapper">
     <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       </div>
