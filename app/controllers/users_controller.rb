@@ -17,5 +17,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :email, :secret_id, :answer)
   end
 
-
 end

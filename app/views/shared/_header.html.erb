@@ -6,7 +6,7 @@
       </div>
       <% if user_signed_in? %>
         <div class="nav__right">
-          <%= link_to "ログアウト", destroy_user_session_path, class: :btn_hover_bottom %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :btn_hover_bottom %>
           <%= link_to "マイページ", edit_user_registration_path, class: :btn_hover_bottom %>
         </div>
       <% else %>
