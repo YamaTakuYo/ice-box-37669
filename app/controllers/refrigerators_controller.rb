@@ -3,6 +3,7 @@ class RefrigeratorsController < ApplicationController
   
   def index
     @refrigerator = Refrigerator.all
+    @refrigerators = Refrigerator.all
   end
   
   def new
@@ -25,6 +26,11 @@ class RefrigeratorsController < ApplicationController
   def edit
   end
   
+  def destroy
+    @refrigerator.destroy
+    redirect_to new_refrigerator_path
+   end
+
   private
 
   def refrigerator_params

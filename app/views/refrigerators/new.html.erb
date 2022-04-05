@@ -27,11 +27,4 @@
   </div>
 <% end %>
 
-<% @refrigerators.each do |refrigerator| %>
-    <ul>
-      <li><%= refrigerator.food %></li>
-      <li><%= refrigerator.category.name %></li>
-      <li><%= refrigerator.ex_date %></li>
-    </ul>
-
-<% end %>
+<%= render "shared/inside"%>

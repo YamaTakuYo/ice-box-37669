@@ -8,11 +8,8 @@
           <% if user_signed_in? %>
             <div class="greeting">
               <h2>こんにちは</h2>
-              <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link %>
+              <%= link_to "#{current_user.nickname}さん", class: :greeting__link %>
             </div>
-            <%= link_to(new_refrigerator_path, class: 'purchase-btn') do %>
-              <span class='purchase-btn-text'>出品する</span>
-            <% end %>
 <%# // ログインしているときは上記を表示する %>
           <% else %>
 <%# ログインしていないときは以下を表示する %>
