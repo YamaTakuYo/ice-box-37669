@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'refrigerators/index'
   root to: "refrigerators#index"
   resources :users, only: [:edit, :update]
+  resources :refrigerators do
+  end
 end

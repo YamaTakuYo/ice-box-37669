@@ -4,11 +4,13 @@
   <main class="main">
     <div class="inner">
       <div>
+<%# ログインしてるときは以下を表示する %>
           <% if user_signed_in? %>
             <div class="greeting">
               <h2>こんにちは</h2>
-              <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link %>
+              <%= link_to "#{current_user.nickname}さん", class: :greeting__link %>
             </div>
+<%# // ログインしているときは上記を表示する %>
           <% else %>
 <%# ログインしていないときは以下を表示する %>
           <h2>あなたの冷蔵庫はきれいですか？</h2>
