@@ -7,7 +7,7 @@ class RefrigeratorsController < ApplicationController
   
   def new
     @refrigerator = Refrigerator.new
-    @refrigerators = Refrigerator.where(active: true)
+    @refrigerators = Refrigerator.all
   end
 
   def create

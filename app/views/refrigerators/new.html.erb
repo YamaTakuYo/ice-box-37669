@@ -28,9 +28,10 @@
 <% end %>
 
 <% @refrigerators.each do |refrigerator| %>
-  <ul>
-    <li>タイトル<%= refrigerator.food %></li>
-    <li>内容<%= refrigerator.category %></li>
-    <li>投稿日<%= refrigerator.ex_date %></li>
-  </ul>
+    <ul>
+      <li><%= refrigerator.food %></li>
+      <li><%= refrigerator.category.name %></li>
+      <li><%= refrigerator.ex_date %></li>
+    </ul>
+
 <% end %>
