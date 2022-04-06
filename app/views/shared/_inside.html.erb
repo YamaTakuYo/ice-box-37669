@@ -1,5 +1,5 @@
 <div class="text">冷蔵庫一覧</div>
-<%if current_user.id == @refrigerator.user_id %>
+<%# <% if user_signed_in? && current_user.id == @refrigerator.user_id %>
   <table class="">
     <tr>
         <th class="">食材</th>
@@ -16,4 +16,5 @@
         <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
       </tr>
     <% end %>
-<% end %>
+
+<%# <% end %>
