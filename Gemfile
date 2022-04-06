@@ -65,3 +65,5 @@ gem 'pry-rails'
 group :development do
   gem 'rubocop', require: false
 end
+
+gem 'google-api-client', '~> 0.11'
