@@ -21,6 +21,7 @@ class RefrigeratorsController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   def edit
@@ -38,6 +39,6 @@ class RefrigeratorsController < ApplicationController
   end
 
   def set_refrigerator
-    @refrigerator = Refrigerator.find(params[:id])
+    @refrigerator = Refrigerator.includes(:user).find(params[:id])
   end
 end

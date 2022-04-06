@@ -1,18 +1,20 @@
 <div class="text">冷蔵庫一覧</div>
-
-<table class="">
-  <tr>
-      <th class="">食材</th>
-      <th class="">分類</th>
-      <th class="">賞味期限</th>
-      <th class="">備考</th>
-  </tr>
-  <% @refrigerators.each do |refrigerator| %>
+<%# <% if user_signed_in? && current_user.id == @refrigerator.user_id %>
+  <table class="">
     <tr>
-      <td class=""><%= refrigerator.food %></td>
-      <td class=""><%= refrigerator.category.name %></td>
-      <td class=""><%= refrigerator.ex_date.strftime("%Y年%m月%d日") %></td>
-      <td class=""><%= refrigerator.remarks %></td>
-      <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
+        <th class="">食材</th>
+        <th class="">分類</th>
+        <th class="">賞味期限</th>
+        <th class="">備考</th>
     </tr>
-  <% end %>
+    <% @refrigerators.each do |refrigerator| %>
+      <tr>
+        <td class=""><%= refrigerator.food %></td>
+        <td class=""><%= refrigerator.category.name %></td>
+        <td class=""><%= refrigerator.ex_date.strftime("%Y年%m月%d日") %></td>
+        <td class=""><%= refrigerator.remarks %></td>
+        <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
+      </tr>
+    <% end %>
+
+<%# <% end %>
