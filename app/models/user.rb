@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :refrigerator
+  has_many :refrigerators
+  has_many :recipes
 
   with_options presence: true do
     validates :nickname
