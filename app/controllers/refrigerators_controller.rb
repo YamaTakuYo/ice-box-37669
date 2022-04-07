@@ -1,6 +1,6 @@
 class RefrigeratorsController < ApplicationController
   before_action :set_refrigerator, only: [:show, :edit, :update, :destroy]
-
+  before_action :baria_user, only: [:edit, :destroy, :update]
   def index
     @refrigerator = Refrigerator.all
     @refrigerators = Refrigerator.all
@@ -21,7 +21,6 @@ class RefrigeratorsController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
   end
 
   def edit
@@ -41,4 +40,11 @@ class RefrigeratorsController < ApplicationController
   def set_refrigerator
     @refrigerator = Refrigerator.includes(:user).find(params[:id])
   end
+
+  def baria_user
+    unless Refrigerator.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to root_path
+    end
+   end
+
 end
