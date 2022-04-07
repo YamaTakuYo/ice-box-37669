@@ -1,5 +1,5 @@
 <div class="text">冷蔵庫一覧</div>
-<% if user_signed_in? && current_user.id == @refrigerator.user_id %>
+
   <table class="">
     <tr>
         <th class="">食材</th>
@@ -9,12 +9,13 @@
     </tr>
     <% @refrigerators.each do |refrigerator| %>
       <tr>
+        <% if user_signed_in? && current_user.id == refrigerator.user_id %>
         <td class=""><%= refrigerator.food %></td>
         <td class=""><%= refrigerator.category.name %></td>
         <td class=""><%= refrigerator.ex_date.strftime("%Y年%m月%d日") %></td>
         <td class=""><%= refrigerator.remarks %></td>
         <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
 
-<% end %>
