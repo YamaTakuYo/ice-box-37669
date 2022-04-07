@@ -9,6 +9,9 @@
             <div class="greeting">
               <h2>こんにちは</h2>
               <%= link_to "#{current_user.nickname}さん", class: :greeting__link %>
+              <div class="">
+                <%= link_to "料理投稿", new_recipe_path, class: :greeting__link%>
+              </div>
             </div>
 <%# // ログインしているときは上記を表示する %>
           <% else %>
