@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :refrigerators do
   end
-  devise_scope :user do
+  resources :recipes do
   end
 end
