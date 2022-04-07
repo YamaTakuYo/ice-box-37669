@@ -6,6 +6,7 @@
         <th class="">分類</th>
         <th class="">賞味期限</th>
         <th class="">備考</th>
+        <th class="">廃棄まで</th>
     </tr>
     <% @refrigerators.each do |refrigerator| %>
       <tr>
@@ -14,6 +15,7 @@
         <td class=""><%= refrigerator.category.name %></td>
         <td class=""><%= refrigerator.ex_date.strftime("%Y年%m月%d日") %></td>
         <td class=""><%= refrigerator.remarks %></td>
+        <td class=""><%= (refrigerator.ex_date.end_of_day - Time.zone.now).to_i / 1.day %>日</td>
         <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
         <% end %>
       </tr>
