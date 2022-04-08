@@ -1,32 +1,37 @@
 <%= render "shared/header"%>
 
-<%= form_with model: @recipe, local: true do |f|%>
+<%= form_with(model: @recipe, local: true) do |f|%>
   
   <div class="field">
     <%= f.label :image, "料理の画像" %><br />
     <%= f.file_field :image, id:"recipe_image" %>
   </div>
   
-  
   <div class="field">
     <%= f.label :name, "品名" %><br />
     <%= f.text_field :name, id:"recipe_name" %>
   </div>
 
-  <div class="field">
-    <%= f.label :ingredient, "食材" %><br />
-    <%= f.text_field :ingredient, class: :form__text, id:"recipe_ingredient" %>
-  </div>
+  <%= f.fields_for :ingredients  do |ingredient| %>
+    <div class="field">
+      <%= ingredient.label :name, "食材" %><br />
+      <%= ingredient.text_field :name, class: :form__text, id:"recipe_ingredient" %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :seasoning, "調味料" %><br />
-    <%= f.text_field :seasoning, class: :form__text, id:"recipe_seasoning" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :procedure, "料理手順" %><br />
-    <%= f.text_field :procedure, class: :form__text, id:"recipe_procedure" %>
-  </div>
+  <%= f.fields_for :seasonings do |seasoning| %>
+    <div class="field">
+      <%= seasoning.label :name, "調味料" %><br />
+      <%= seasoning.text_field :name, class: :form__text, id:"recipe_seasoning" %>
+    </div>
+  <% end %>
+  
+  <%= f.fields_for :procedures do |procedure| %>
+    <div class="field">
+      <%= procedure.label :name, "料理手順" %><br />
+      <%= procedure.text_field :name, class: :form__text, id:"recipe_procedure" %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

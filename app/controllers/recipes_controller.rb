@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  
   def index
     @recipe = Recipe.all
     @recipes = Recipe.all
@@ -7,6 +8,9 @@ class RecipesController < ApplicationController
   
   def new
     @recipe = Recipe.new
+    ingredients = @recipe.ingredients.build
+    seasonings = @recipe.seasonings.build
+    procedures = @recipe.procedures.build
   end
 
   def create
@@ -21,7 +25,10 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :ingredient, :seasoning, :procedure, :image).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:name, :image, 
+      ingredients_attributes: [:name, :_destroy, :id], 
+      seasonings_attributes: [:name, :_destroy, :id], 
+      procedures_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 
