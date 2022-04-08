@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
-  
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+
   def index
     @recipe = Recipe.all
     @recipes = Recipe.all
   end
-
-  
+ 
   def new
     @recipe = Recipe.new
     ingredients = @recipe.ingredients.build
@@ -13,6 +13,9 @@ class RecipesController < ApplicationController
     procedures = @recipe.procedures.build
   end
 
+  def edit
+  end
+  
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
@@ -23,10 +26,23 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
     @seasoning = Seasoning.find(params[:id])
     @procedure = Procedure.find(params[:id])
+  end
+  
+  def  destroy
+    @recipe.destroy
+    redirect_to root_path
+  end
+  
+  def update
+    @recipe.update(recipe_params)
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -38,5 +54,9 @@ class RecipesController < ApplicationController
       procedures_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
 end
