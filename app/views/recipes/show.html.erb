@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<h2 class="name">
+  <%= @recipe.name %>
+</h2>
+    <div class="item-img-content">
+      <%= image_tag @recipe.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="">
+        <%= @ingredient.name %>
+      </span>
+      <span class="item-postage">
+        <%= @seasoning.name %>
+      </span>
+      <span class="item-postage">
+        <%= @procedure.name %>
+      </span>
+    </div>
+<%if current_user.id == @recipe.user_id %>
+  <%= link_to "商品の編集", edit_recipe_path(@recipe), method: :get, class: "item-red-btn" %>
+  <p class="or-text">or</p>
+  <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"item-destroy" %>
+<% end %>

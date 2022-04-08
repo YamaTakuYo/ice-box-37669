@@ -15,7 +15,14 @@
         <td class=""><%= refrigerator.category.name %></td>
         <td class=""><%= refrigerator.ex_date.strftime("%Y年%m月%d日") %></td>
         <td class=""><%= refrigerator.remarks %></td>
-        <td class=""><%= (refrigerator.ex_date.end_of_day - Time.zone.now).to_i / 1.day %>日</td>
+        <td class="break-word">
+            <% if refrigerator.ex_date - Time.zone.now > 0 %>
+              <span>あと <%= (refrigerator.ex_date - Time.zone.now).to_i / 1.day %> 日</span>
+            <% elsif refrigerator.ex_date - Time.zone.now == 0 %>
+              <span class="warning">今日までです</span>
+            <% else %>
+              <span class="alort">期限が過ぎています</span>
+            <% end %></td>
         <td class=""><%= link_to "削除", refrigerator, method: :delete %></td>
         <% end %>
       </tr>

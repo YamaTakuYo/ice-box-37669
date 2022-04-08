@@ -22,6 +22,13 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.find(params[:id])
+    @seasoning = Seasoning.find(params[:id])
+    @procedure = Procedure.find(params[:id])
+  end
+
   private
 
   def recipe_params
