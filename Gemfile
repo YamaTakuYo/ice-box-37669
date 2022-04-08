@@ -57,15 +57,11 @@ gem 'devise'
 
 gem 'active_hash'
 
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-
 gem 'pry-rails'
 
 group :development do
   gem 'rubocop', require: false
 end
 
-gem 'trollop', '~> 2.1'
-
-gem 'google-api-client', '0.9.20', require: 'google/apis/youtube_v3'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'

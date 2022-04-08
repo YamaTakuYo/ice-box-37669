@@ -4,6 +4,7 @@ class RefrigeratorsController < ApplicationController
   def index
     @refrigerator = Refrigerator.all
     @refrigerators = Refrigerator.all
+    @recipes = Recipe.all
   end
 
   def new
