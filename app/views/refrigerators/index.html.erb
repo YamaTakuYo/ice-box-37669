@@ -23,8 +23,23 @@
             冷蔵庫を開けたら同じ食材を買っていた…<br>
             <b>こんなこと起きてませんか？</b>
           </p>
-          
-          <% end %>
+          <table class="table_rei">
+            <tr>
+              <th class="table_rei_q">食材</th>
+              <th class="table_rei_q">分類</th>
+              <th class="table_rei_q">賞味期限</th>
+              <th class="table_rei_q">備考</th>
+              <th class="table_rei_q">廃棄まで</th>
+            </tr> 
+            <tr>
+              <td class="table_rei_a">豚肉</td>
+              <td class="table_rei_a">肉類</td>
+              <td class="table_rei_a">〇〇年○月○日</td>
+              <td class="table_rei_a">トンカツ用</td>
+              <td class="table_rei_a">賞味期限が過ぎています</td>
+              <td class="table_rei_a">削除</td>
+            </tr>
+            <% end %>
       </div> 
 <%# // ログインしていないときは上記を表示する %>
       </div>
@@ -46,5 +61,6 @@
   </main>
     
 </body>
+
 
 <%= render "shared/footer" %>

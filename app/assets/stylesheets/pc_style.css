@@ -70,6 +70,9 @@
 .footer {
   background-color: #999;
   padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .copyright {
   text-align: center;
@@ -77,41 +80,22 @@
   font-size: 10px;
 }
 
+/* エラーメッセージ */
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
 /* フォーム周り */
-.form__wrapper{
-  min-height: calc(100vh - 161px);
-}
 
-.form__text {
-  width: 50%;
-}
-
-.field{
-  margin: 10px 0;
-}
-
-.actions{
-  margin-bottom: 40px;
-}
-
-.form__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #fff;
-  text-decoration: none;
-  user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
-  border-radius: 3px;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-  transition: 0.2s ease;
-}
-
-.form__btn:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
 
 /* メイン */
 
