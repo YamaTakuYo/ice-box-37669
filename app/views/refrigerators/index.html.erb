@@ -13,20 +13,7 @@
                 <%= link_to "料理投稿", new_recipe_path, class: :greeting__link%>
               </div>
             </div>
-            <% @recipes.each do |recipe| %>
-              <li class='list'>
-                <%= link_to recipe_path(recipe) do %>
-                <div class=''>
-                  <%= image_tag recipe.image, class: "item-img" %>
-                </div>
-                <div class='item-info'>
-                  <h3 class='item-name'>
-                    <%= recipe.name %>
-                  </h3>
-                </div>
-                <% end %>
-              </li>
-            <% end %>
+            
 <%# // ログインしているときは上記を表示する %>
           <% else %>
 <%# ログインしていないときは以下を表示する %>
@@ -40,10 +27,22 @@
           <% end %>
       </div> 
 <%# // ログインしていないときは上記を表示する %>
-      <div class="card__wrapper">
-    <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       </div>
-    </div>
+        <% @recipes.each do |recipe| %>
+          <li class='list'>
+            <%= link_to recipe_path(recipe) do %>
+              <div class=''>
+                <%= image_tag recipe.image, class: "item-img" %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= recipe.name %>
+                </h3>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </div>
   </main>
     
 </body>
