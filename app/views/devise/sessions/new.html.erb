@@ -5,10 +5,13 @@
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザーログイン</h2>
 
-      <%# <%= render 'shared/error_messages', model: f.object %>
+      
 
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
-        <div class='field'>
+      
+      <%= render 'shared/error_messages', model: f.object %>  
+      
+      <div class='field'>
           <div class='field-label'>
             <%= f.label :email, "メールアドレス" %><br />
           </div>
