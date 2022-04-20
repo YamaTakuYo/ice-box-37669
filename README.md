@@ -50,10 +50,12 @@
 
 ### 工夫したこと
 
+- 食材登録の際に、賞味期限までの日数が表示されるように実装しました。
 - 商品ごとにジャンル分けのできるよう、 categoryテーブルと refrigerator テーブルを関連づけし、タグ機能を追加しました。
 - 料理投稿機能にJavaScriptを導入するために、seasoningテーブルと ingredientテーブル、 procedureテーブルを分け、行を増やすために別テーブルで作成しました。recipeテーブルと関連付けることで、各テーブルに保存できるよう行いました。
 
 
+https://user-images.githubusercontent.com/100755824/164155373-66046359-e7d0-4e52-9e52-7c2262cd9cd5.mp4
 ### これから追加したい機能
 
 - refrigeratorテーブルからrecipeテーブルへの食材検索機能
