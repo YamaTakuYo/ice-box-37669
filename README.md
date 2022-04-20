@@ -46,9 +46,7 @@
   - 編集機能
   - 削除機能
 
-# ER図
 
-![ER](https://user-images.githubusercontent.com/100755824/164153590-4990950b-92de-4f50-aee6-e1c0f2f340ad.png)
 
 ### 工夫したこと
 
@@ -145,3 +143,5 @@ belongs_to :recipe
 
 ### Association
 belongs_to :recipe
+
+![ER](https://user-images.githubusercontent.com/100755824/164153590-4990950b-92de-4f50-aee6-e1c0f2f340ad.png)
